@@ -39,3 +39,7 @@ pio test
 
 * If your having problems with python while building, delete the related folder.
 * If the connecting bar is stuck while uploading, hold the reset button on the esp until platformio connects
+
+## License
+
+[Apache License 2.0](https://www.tldrlegal.com/l/apache2)
