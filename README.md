@@ -1,6 +1,7 @@
 # ESP32-firmware
 
 Heart & soul of microcontrollers controlling shelfs, for awesome behavior like this:
+![Startup-Sequence](Showcase.gif)
 
 ## Description
 
