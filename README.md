@@ -1,7 +1,8 @@
 # ESP32-firmware
 
-Heart & soul of microcontrollers controlling shelfs, for awesome behavior like this:
-![Startup-Sequence](Showcase.gif)
+Heart & soul of microcontrollers controlling shelfs, for awesome behavior like this:  
+
+<img src="Showcase.gif" width="330" height="500"/>
 
 ## Description
 
