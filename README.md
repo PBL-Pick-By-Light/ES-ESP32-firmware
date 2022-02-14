@@ -7,8 +7,7 @@ Heart & soul of microcontrollers controlling shelfs, for awesome behavior like t
 ## Description
 
 Aim is to implement functionality needed to establish a connection with a WLAN and communicate with Back-/Frontend via MQTT.
-Furthermore, includes software to control connected LEDs and support backup functionality.  
-The current software is made to work with an [ESP32](https://www.espressif.com/en/products/socs/esp32) by [espressif](https://www.espressif.com/en).
+Furthermore, includes software to control connected LEDs and support backup functionality. The current software is made to work with an [ESP32](https://www.espressif.com/en/products/socs/esp32) by [espressif](https://www.espressif.com/en).
 
 ## Getting Started
 
