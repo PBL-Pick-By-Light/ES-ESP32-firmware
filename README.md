@@ -5,7 +5,7 @@
 As we are trying to create our Pick-By-Light system, we need some way to control the LEDs in our shelfs.  
 For this, we are using microcontrollers running dedicated firmware.  
 _The software run by these microcontrollers is to be found in this part of the project._  
-They are responsible for reacting to messages using the MQTT-Protocol and fulfill send assignements.
+They are responsible for reacting to messages using the [MQTT-Protocol](https://mqtt.org/) and fulfill send assignements.
 These include:
 * Controlling any connected LEDs
 * Functionality to be registered as a new shelf in the complete system
@@ -34,7 +34,7 @@ For an easy setup, past developers chose to program the ESP32 in VSC using the P
 
 ### Flashing the firmware
 
-* Load the project in Visual Studio Code
+* Load the "Firmware" folder in Visual Studio Code
 <img src="Instructions/OpenProject.png" width="700" height="250"/>
 
 * To build with PlatformIO you can use strg+alt+B (to check if everything is correct)
