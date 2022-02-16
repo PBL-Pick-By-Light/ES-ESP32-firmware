@@ -1,13 +1,27 @@
 # ESP32-firmware
 
-Heart & soul of microcontrollers controlling shelfs, for awesome behavior like this:  
-
-<img src="Showcase.gif" width="330" height="500"/>
-
 ## Description
 
-Aim is to implement functionality needed to establish a connection with a WLAN and communicate with Back-/Frontend via MQTT.
-Furthermore, includes software to control connected LEDs and support backup functionality. The current software is made to work with an [ESP32](https://www.espressif.com/en/products/socs/esp32) by [espressif](https://www.espressif.com/en).
+As we are trying to create our Pick-By-Light system, we need some way to control the LEDs in our shelfs.  
+For this, we are using microcontrollers running dedicated firmware.  
+_The software run by these microcontrollers is to be found in this part of the project._  
+They are responsible for reacting to messages using the MQTT-Protocol and fulfill send assignements.
+These include:
+* Controlling any connected LEDs
+* Functionality to be registered as a new shelf in the complete system
+* Using the microcontollers memory to save its own shelf-configuration, and
+* have the ability to load a backup back into the main database in case of a critical failure  
+  
+For achieving these abilities, the firmware takes care of basic functionality, like:
+* Connecting to a WLAN
+* Setting up a MQTT Client, and
+* listen to any incoming messages
+
+In conclusion, the firmware acts as heart & soul of the used shelfs, for awesome behavior like this:  
+  
+<img src="Showcase.gif" width="440" height="625"/>
+  
+**The current software is made to work with an [ESP32](https://www.espressif.com/en/products/socs/esp32) by [espressif](https://www.espressif.com/en).**
 
 ## Getting Started
 
@@ -16,18 +30,13 @@ Furthermore, includes software to control connected LEDs and support backup func
 For an easy setup, past developers chose to program the ESP32 in VSC using the PlatformIO Extension:
 * [Visual Studio Code](https://code.visualstudio.com/)
 * VSC Plugin: [PlatformIO IDE](https://platformio.org/platformio-ide)
-* [USB-Driver for ESP32](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) (**only needed for Windows**) 
-
-### Cloning
-
-Run this command to clone this repo manually:
-```bash
-git clone https://git.thm.de/softwaretechnik-projekt-pick-by-light-system-wise21_22/pbl-embedded-system/esp32-firmware
-```
+* [USB-Driver for ESP32](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) (**only needed under Windows**) 
 
 ### Flashing the firmware
 
 * Load the project in Visual Studio Code
+<img src="Instructions/OpenProject.png" width="700" height="250"/>
+
 * Build with PlatformIO (to check if everything is correct)
 * Connect the ESP32 via USB
 * Upload with PlatformIO (You may need to hold the boot button of the ESP for it to get recognized)
