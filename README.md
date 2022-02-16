@@ -8,13 +8,13 @@ _The software run by these microcontrollers is to be found in this part of the p
 They are responsible for reacting to messages using the [MQTT-Protocol](https://mqtt.org/) and fulfill send assignments.
 These include:
 * Controlling any connected LEDs
-* Functionality to be registered as a new shelf in the complete system
 * Using the microcontrollers memory to save its own shelf-configuration, and
 * have the ability to load a backup back into the main database in case of a critical failure  
   
 For achieving these abilities, the firmware takes care of basic functionality, like:
 * Connecting to a WLAN
-* Setting up a MQTT Client, and
+* Setting up a MQTT Client, 
+* register the shelf in a system with (possibly) mutliple shelves, and thereafter
 * listen to any incoming messages
 
 In conclusion, the firmware acts as heart & soul of the used shelves, for awesome behavior like this:  
@@ -37,7 +37,7 @@ For an easy setup, past developers chose to program the ESP32 in VSC using the P
 * Load the "Firmware" folder in Visual Studio Code
 <img src="Instructions/OpenProject.png" width="700" height="250"/>
 
-* To build with PlatformIO you can use strg+alt+B (to check if everything is correct)
+* To build with PlatformIO you can use ctrl+alt+B (to check if everything is correct)
 * Connect the ESP32 via USB
 * Upload with PlatformIO (You may need to hold the boot button of the ESP for it to get recognized)
 <img src="Instructions/Upload.png">
