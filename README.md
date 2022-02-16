@@ -2,14 +2,14 @@
 
 ## Description
 
-As we are trying to create our Pick-By-Light system, we need some way to control the LEDs in our shelfs.  
+As we are trying to create our Pick-By-Light system, we need some way to control the LEDs in our shelves.  
 For this, we are using microcontrollers running dedicated firmware.  
 _The software run by these microcontrollers is to be found in this part of the project._  
-They are responsible for reacting to messages using the [MQTT-Protocol](https://mqtt.org/) and fulfill send assignements.
+They are responsible for reacting to messages using the [MQTT-Protocol](https://mqtt.org/) and fulfill send assignments.
 These include:
 * Controlling any connected LEDs
 * Functionality to be registered as a new shelf in the complete system
-* Using the microcontollers memory to save its own shelf-configuration, and
+* Using the microcontrollers memory to save its own shelf-configuration, and
 * have the ability to load a backup back into the main database in case of a critical failure  
   
 For achieving these abilities, the firmware takes care of basic functionality, like:
@@ -17,7 +17,7 @@ For achieving these abilities, the firmware takes care of basic functionality, l
 * Setting up a MQTT Client, and
 * listen to any incoming messages
 
-In conclusion, the firmware acts as heart & soul of the used shelfs, for awesome behavior like this:  
+In conclusion, the firmware acts as heart & soul of the used shelves, for awesome behavior like this:  
   
 <img src="Showcase.gif" width="440" height="625"/>
   
