@@ -37,9 +37,10 @@ For an easy setup, past developers chose to program the ESP32 in VSC using the P
 * Load the project in Visual Studio Code
 <img src="Instructions/OpenProject.png" width="700" height="250"/>
 
-* Build with PlatformIO (to check if everything is correct)
+* To build with PlatformIO you can use strg+alt+B (to check if everything is correct)
 * Connect the ESP32 via USB
 * Upload with PlatformIO (You may need to hold the boot button of the ESP for it to get recognized)
+<img src="Instructions/Upload.png">
 
 ### Testing
 
