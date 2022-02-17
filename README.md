@@ -1,44 +1,59 @@
 # ESP32-firmware
 
-Firmware of an esp who controls the leds of a shelf.
-
 ## Description
 
-This project contains the controls of the leds with adafruit, establishes a connection with the internet and listens to different topics with mqtt.
+As we are trying to create our Pick-By-Light system, we need some way to control the LEDs in our shelves.  
+For this, we are using microcontrollers running dedicated firmware.  
+_The software run by these microcontrollers is to be found in this part of the project._  
+They are responsible for reacting to messages using the [MQTT-Protocol](https://mqtt.org/) and fulfill send assignments.
+These include:
+* Controlling any connected LEDs
+* Using the microcontrollers memory to save its own shelf-configuration, and
+* have the ability to load a backup back into the main database in case of a critical failure  
+  
+For achieving these abilities, the firmware takes care of basic functionality, like:
+* Connecting to a WLAN
+* Setting up a MQTT Client, 
+* register the shelf in a system with (possibly) mutliple shelves, and thereafter
+* listen to any incoming messages
+
+In conclusion, the firmware acts as heart & soul of the used shelves, for awesome behavior like this:  
+  
+<img src="Showcase.gif" width="440" height="625"/>
+  
+**The current software is made to work with an [ESP32](https://www.espressif.com/en/products/socs/esp32) by [espressif](https://www.espressif.com/en).**
 
 ## Getting Started
 
-### Dependencies
+### Environment
 
-* Visual Studio Code https://code.visualstudio.com/
-* VSC Plugin: PlatformIO IDE https://platformio.org/platformio-ide
-* Driver for ESP (only Windows USB Driver) https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers
+For an easy setup, past developers chose to program the ESP32 in VSC using the PlatformIO Extension:
+* [Visual Studio Code](https://code.visualstudio.com/)
+* VSC Plugin: [PlatformIO IDE](https://platformio.org/platformio-ide)
+* [USB-Driver for ESP32](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) (**only needed under Windows**) 
 
-### Cloning
+### Flashing the firmware
 
-```bash
-git clone https://git.thm.de/softwaretechnik-projekt-pick-by-light-system-wise21_22/pbl-embedded-system/esp32-firmware
-```
+* Load the "Firmware" folder in Visual Studio Code
+<img src="Instructions/OpenProject.png" width="700" height="250"/>
 
-### Uploading onto esp32
-
-* Load project in Visual Studio Code
-* Build with Platformio (to check if everything is correct)
-* Connect the ESP to the computer with usb
-* Upload with Platformio
+* To build with PlatformIO you can use ctrl+alt+B (to check if everything is correct)
+* Connect the ESP32 via USB
+* Upload with PlatformIO (You may need to hold the boot button of the ESP for it to get recognized)
+<img src="Instructions/Upload.png">
 
 ### Testing
 
-* Connect esp32 first
-
+* Connect your ESP32 via USB
+* Open up a console in VSC and run:
 ```bash
 pio test
 ```
 
 ## Help
 
-* If your having problems with python while building, delete the related folder.
-* If the connecting bar is stuck while uploading, hold the reset button on the esp until platformio connects
+* If you are having problems with Python while building, delete the related folder.
+* If the connecting bar is stuck while uploading, hold the boot button of the ESP until PlatformIO connects.
 
 ## License
 
