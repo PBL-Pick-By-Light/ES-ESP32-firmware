@@ -183,3 +183,18 @@ void AnimationSnake(int rows, int columns, bool rainbowMode) {
         }
     }
 }
+
+void LightUpAll() {
+    //Light up whole shelf in red
+    LEDGlow(0, NUMPIXELS, 255, 0, 0);
+    delay(333);
+    LEDOffAll();
+    //Light up whole shelf in green
+    LEDGlow(0, NUMPIXELS, 0, 255, 0);
+    delay(333);
+    LEDOffAll();
+    //Light up whole shelf in blue
+    LEDGlow(0, NUMPIXELS, 0, 0, 255);
+    delay(333);
+    LEDOffAll();
+}

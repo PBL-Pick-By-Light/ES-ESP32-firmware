@@ -1,0 +1,58 @@
+@startuml
+    skinparam linetype ortho
+    skinparam defaultFontSize 25
+    skinparam Nodesep 500
+    skinparam ArrowThickness 3
+    skinparam padding 5
+    skinparam Nodesep 80
+
+    skinparam class {
+        FontSize 30
+        BackgroundColor LightBlue
+        BorderColor Black
+        ArrowColor Black
+    }
+package "mqtt | class diagram" <<Rectangle>> {
+    class esp32_mqtt {
+        - mac : String
+        - timer : hw_timer_t
+        - sendKeepAlive : volatile bool
+
+        - t_register : String
+        - t_config_ack : String
+        - t_config_reset : String
+        - t_config_offline : String
+        - t_light_ack : String
+        - t_light_set : String
+        - t_light_unset : String
+        - t_light_allOn : String
+        - t_light_allOff : String
+        - t_config_updatePosition : String
+        - t_config_createPosition : String
+        - t_config_deletePosition : String
+
+        + listen() : void
+        + createTopic(attachment String) : String
+        + setupMQTT(server_address const char*, port uint16_t) : bool
+        
+        - onTimer() : void
+        - sendLightAck(ack_id char) : void
+        - sendConfigAck(ack_id char) : void
+        - subscribeTo(topic const char*) : bool
+        - reconnect(client_name const char*) : bool
+        - publishMsg(topic const char*, payload const char*) : bool
+        - callback(topic char*, message byte*, length unsigned int) : void
+    }
+}
+
+legend bottom
+  | |= Technische Hochschule Mittelhessen – THM \n University of Applied Sciences |
+  | Repository | [[https://github.com/PBL-Pick-By-Light/ES-ESP32-firmware]] |
+  | UML-Tool| PlantUML v1.2021.11|
+  | Model version| 1.0 |
+  | Creation date| 16.02.2022 |
+  | Creator| Denis Paul |
+  | Mail| denis.paul@mni.thm.de |
+  | Last change| 16.02.2022 |
+end legend
+@enduml

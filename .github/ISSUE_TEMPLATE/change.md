@@ -1,3 +1,11 @@
+---
+name: Change an existing feature
+about: Something already exists but has to be changed.
+title: ''
+labels: 'enhancement'
+assignees: ''
+
+---
 <!---
 Please read this!
 
@@ -24,10 +32,3 @@ and verify the issue you're about to submit isn't a duplicate.
 ### Possible approach
 
 <!-- If you can, describe a possible solution -->
-
-<!-- Label reminders
-Use the following resources to find the appropriate labels:
-- https://git.thm.de/softwaretechnik-projekt-pick-by-light-system-wise21_22/pbl-embedded-system/esp32-firmware/-/labels
--->
-
-/label ~"embedded System" ~ToDo

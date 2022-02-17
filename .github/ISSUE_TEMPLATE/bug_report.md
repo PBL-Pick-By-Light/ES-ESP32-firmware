@@ -1,3 +1,12 @@
+---
+name: Bug report
+about: Create a report to help us improve
+title: ''
+labels: 'bug'
+assignees: ''
+
+---
+
 <!---
 Please read this!
 
@@ -29,5 +38,3 @@ and verify the issue you're about to submit isn't a duplicate.
 ### Possible fixes
 
 <!-- If you can, link to the line of code that might be responsible for the problem. -->
-
-/label ~"embedded System" ~ToDo

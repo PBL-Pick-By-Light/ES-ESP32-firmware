@@ -17,12 +17,12 @@ Coded in Visual Studio Code with the PlatformIO IDE extension (https://platformi
 #include "LED.h"
 
 // ---WLAN connection settings--- //
-const char* ssid = "SWTP_TEST_WLAN";
-const char* password = "SWTPswtp";
+const char* ssid = "<WLAN-SSID>";
+const char* password = "<WLAN-PASSWORD>";
 
 // ---MQTT Broker connection settings--- //
 //Broker Server Address
-const char* mqtt_server = "192.168.1.116";
+const char* mqtt_server = "<MQTT-SERVER-IP>";
 //Port Number. 1883 is the default Port for MQTT.
 uint16_t mqtt_port = 1883;
 
@@ -38,18 +38,7 @@ void setup() {
     //Display Startup animation
     AnimationSnake(6, 4, true);
     delay(333);
-    //Light up whole shelf in red
-    LEDGlow(0, 255, 255, 0, 0);
-    delay(333);
-    LEDOffAll();
-    //Light up whole shelf in green
-    LEDGlow(0, 255, 0, 255, 0);
-    delay(333);
-    LEDOffAll();
-    //Light up whole shelf in blue
-    LEDGlow(0, 255, 0, 0, 255);
-    delay(333);
-    LEDOffAll();
+    LightUpAll();
 
     //Initialize WLAN connection
     setupWLAN(ssid, password);

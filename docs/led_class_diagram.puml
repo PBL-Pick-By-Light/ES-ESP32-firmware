@@ -1,0 +1,40 @@
+@startuml
+    skinparam linetype ortho
+    skinparam defaultFontSize 25
+    skinparam Nodesep 500
+    skinparam ArrowThickness 3
+    skinparam padding 5
+    skinparam Nodesep 80
+
+    skinparam class {
+        FontSize 30
+        BackgroundColor LightBlue
+        BorderColor Black
+        ArrowColor Black
+    }
+package "led | class diagram" <<Rectangle>> {
+    class LED {
+        + currentLED : int
+        
+        + LEDInit() : void
+        + LEDOffAll() : void
+        + LightUpAll() : void
+        + LEDGlowNext() : void
+        + LEDGlowStart(start int) : void
+        + LEDOff(start int, end int) : void
+        + LEDGlow(start int, end int, green int, red int, blue int) : void
+        + AnimationSnake(rows int, columns int, rainbowMode bool) : void
+    }
+}
+
+legend bottom
+  | |= Technische Hochschule Mittelhessen – THM \n University of Applied Sciences |
+  | Repository | [[https://github.com/PBL-Pick-By-Light/ES-ESP32-firmware]] |
+  | UML-Tool| PlantUML v1.2021.11|
+  | Model version| 1.1 |
+  | Creation date| 02.12.2021 |
+  | Creator| Joel Silas Zelenak and Denis Paul|
+  | Mail| joel.zelenak@mni.thm.de |
+  | Last change| 16.02.2022 |
+end legend
+@enduml

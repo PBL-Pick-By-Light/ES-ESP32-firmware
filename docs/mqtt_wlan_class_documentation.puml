@@ -1,0 +1,23 @@
+@startuml
+skinparam note {
+BackgroundColor white
+BorderColor black
+}
+
+:bool connectWiFi(ssid,passwd);
+floating note right: This function establishes a wireless LAN connection, using the WiFi.h library\nfrom Arduino. It tries to connect to the specified WLAN, using given ssid and\npassword.\nArguments "ssid" and "passwd" are\nboth of const char* type, and are preferably created as global variables in a "//WLAN connection settings"\nsection of the main.cpp file.\nIf the connection was a success, true is returned.
+:bool setupMQTT(mqtt_server, mqtt_port);
+floating note right: This function sets up the current MQTT settings, depositting the server address\nand wanted port for later connections in the client of the MQTT module.\nArgument "mqtt_server" is of const char* type, "mqtt_port" is of uint16_t type.\nThey are preferably created as global variables in a "//MQTT connection settings"\nsection of the main.cpp file.\nReturns true if settings were made successfully.
+:bool setCallback(void ((*callback)(char* topic, byte* message, unsigned int length));
+floating note right: This function is used to set the callback() function inside the MQTT-module.\nThe function itself shall be coded inside the main-file, to have all future changes,\nwhich adress behavior of the controller, inside the main file.\nIt's pointer must then be passed to the setCallback() function.
+:bool reconnect(char* client_name);
+floating note right: This function tries to connect to the Broker specified by calling the setupMQTT()\n function.\nArgument "client_name" is of char* type, and is preferably created as global\nvariable in a "//MQTT connection settings" section of the main.cpp file.\nReturns true if the connection was a success.
+:bool subscribeTo(topic);
+floating note right: This function is used to subscribe the client to a specified topic.\nArgument "topic" is of const char* type, and is preferably created as global\nvariable in a "//MQTT connection settings" section of the main.cpp file.\nIt is strongly recommended to use different topics for either publishing or\nlistening to messages, as a message published on a topic that is also listened to,\nresults in this client receiving its own message. Whether or not the client reacts\nto such a message must be specified in the callback() function inside the MQTT\nmodule.\nReturns true if the subscription was a success.
+:listen();
+floating note right: This function is used to listen to all topics that this client is subscribed to.\nWhen the client should be waiting for incoming messages, this must be called()\ncontinuously inside a while-loop.\nIf any message on any subscribed topic is received, the callback() function inside\nthe MQTT module is called and any code inside it is executed.
+
+-[hidden]-> \n;
+:bool publishMsg(topic, payload);
+floating note right: This function is used to listen to publish a message on a specified topic.\nArguments "topic" and "payload" are of const char* type.\nReturns true if publishing the message was a success.
+@enduml
