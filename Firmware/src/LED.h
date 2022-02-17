@@ -59,11 +59,16 @@ void LEDGlowStart(int start);
 */
 void LEDGlowNext();
 
-/*This method displays a "snake-like" animation with all the available LEDs
-rows:        number of available rows
-columns:     number of available columns
-rainbowMode: true if LEDs shall cycle through every color
+/*!
+    @brief              Displays a "snake-like" animation with all available LEDs
+    @param  rows        Number of available rows
+    @param  columns     Number of available columns
+    @param  rainbowMode True if LEDs shall cycle through every color
 */
 void AnimationSnake(int rows, int columns, bool rainbowMode);
 
+/*!
+    @brief Light up all LEDs with red, green and blue
+*/
+void LightUpAll();
 #endif

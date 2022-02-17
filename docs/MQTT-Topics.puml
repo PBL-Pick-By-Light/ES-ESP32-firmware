@@ -1,0 +1,78 @@
+@startuml
+skinparam ComponentBorderColor transparent
+skinparam Shadowing false
+
+
+skinparam usecase {
+BackgroundColor limegreen
+BorderColor black
+}
+
+skinparam usecaseFontColor black
+skinparam usecaseFontSize 15
+skinparam usecaseFontName Aapex
+
+skinparam ComponentFontSize 25
+
+component "MQTT-Topics" {
+    usecase (pbl/) #white
+    usecase (register) #OrangeRed
+    usecase (MAC/) #white
+    usecase (config/) #white
+    usecase (reset)
+    usecase (update_Position)
+    usecase (create_Position)
+    usecase (delete_Position)
+    usecase (get)
+    usecase (offline) #OrangeRed
+    usecase (put) #OrangeRed
+    usecase (ack) as ack1 #OrangeRed
+    usecase (light/) #white
+    usecase (allOff)
+    usecase (allOn)
+    usecase (set)
+    usecase (unset)
+    usecase (ack) as ack2 #OrangeRed
+
+    top to bottom direction
+    (pbl/) --> (register)
+    (pbl/) --> (MAC/)
+
+    (MAC/) --> (config/)
+    (config/) --> (reset)
+    (config/) --> (update_Position)
+    (config/) --> (create_Position)
+    (config/) --> (delete_Position)
+    (config/) --> (get)
+    (config/) --> (offline)
+    (config/) --> (put)
+    (config/) --> ack1
+
+    (MAC/) --> (light/)
+    (light/) --> allOff
+    (light/) --> allOn
+    (light/) --> (set)
+    (light/) --> (unset)
+    (light/) --> ack2
+
+}
+
+file "Legend:" {
+    usecase " " #OrangeRed
+    usecase "  " #limegreen
+
+    note bottom of ( ) : Esp publishes / Pi listens
+    note bottom of (  ) : Pi publishes / Esp listens
+}
+
+legend bottom
+  | |= Technische Hochschule Mittelhessen – THM \n University of Applied Sciences |
+  | Repository | [[https://git.thm.de/softwaretechnik-projekt-pick-by-light-system-wise21_22/pbl-embedded-system/wiki/]] |
+  | UML-Tool| PlantUML v1.2021.11|
+  | Model version| 1.0 |
+  | Creation date| 09.12.2021 |
+  | Creator| Joel Silas Zelenak and David Lotz |
+  | Mail | joel.zelenak@mni.thm.de |
+  | Last change| 25.01.2022 |
+end legend
+@enduml

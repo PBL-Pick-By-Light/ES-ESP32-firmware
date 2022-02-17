@@ -1,0 +1,32 @@
+@startuml
+skinparam note {
+BackgroundColor white
+BorderColor black
+}
+
+:LEDInit();
+floating note right: This method needs to be called in the the setup method of\nthe main to initialize all pixels on the LED stripe.
+
+-[hidden]-> \n;
+
+:LEDOffAll();
+floating note right: This method turns off all pixels.
+detach
+:LightUpAll();
+floating note right: Light up all LEDs with red, green and blue for a short amount of time.
+detach
+:LEDGlowNext();
+floating note right: This method turns on the next LED in the row after the in\nthe previous method selected starting point. (LED Nr =\nstart+1)
+detach
+:LEDOff(start, end);
+floating note right: The LEDoff method turns off all pixels between the starting\nand ending pixels (including the start and end pixel)
+detach
+:LEDGlowStart(start);
+floating note right: This method turns on one selected start LED to help\nindicate position of marker whilst setting up the size of a\ncabinet.
+detach
+:LEDGlow(start, end, R, G, B);
+floating note right:The LEDglow method expects a starting pixel, an ending\npixel and red, green and blue color values and turns on all\ncorresponding pixels in the chosen color.
+detach
+:AnimationSnake(rows, columns, rainbowMode);
+floating note right: Displays a snake-like animation with all available LEDs.
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+    skinparam linetype ortho
+    skinparam defaultFontSize 25
+    skinparam Nodesep 500
+    skinparam ArrowThickness 3
+    skinparam padding 5
+    skinparam Nodesep 80
+
+    skinparam class {
+        FontSize 30
+        BackgroundColor LightBlue
+        BorderColor Black
+        ArrowColor Black
+    }
+package "wlan | class diagram" <<Rectangle>> {
+    class esp32_wlan {
+        + getMAC() : String
+        + setupWLAN(ssid const char*, password const char*) : void
+    }
+}
+
+legend bottom
+  | |= Technische Hochschule Mittelhessen – THM \n University of Applied Sciences |
+  | Repository | [[https://github.com/PBL-Pick-By-Light/ES-ESP32-firmware]] |
+  | UML-Tool| PlantUML v1.2021.11 |
+  | Model version| 1.0 |
+  | Creation date| 16.02.2022 |
+  | Creator| Denis Paul |
+  | Mail| denis.paul@mni.thm.de |
+  | Last change| 16.02.2022 |
+end legend
+@enduml
